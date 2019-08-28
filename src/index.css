@@ -16,3 +16,7 @@
 .board-row {
   display: table;
 }
+
+.status {
+  font: 48px "Century Gothic", Futura, sans-serif;
+}

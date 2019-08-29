@@ -23,7 +23,7 @@ class Calc extends React.Component {
     }
 
     handleClick(v) {
-        if (!v)
+        if (v === undefined)
             return;
         let expr_array = [...this.state.expr];
         if (Number.isInteger(v)) {

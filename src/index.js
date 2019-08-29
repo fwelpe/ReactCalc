@@ -32,10 +32,10 @@ class Calc extends React.Component {
             expr_array[expr_array.length - 1] = expr_array[expr_array.length - 1] * 10 + v;
         } else if (v === 'C')
             expr_array = [0];
-        else if (v !== '=')
-            expr_array.push(v);
-        else {
-            expr_array = [this.result()]
+		else if (v !== '=' && expr_array.length >= 1 && Number.isInteger(expr_array[expr_array.length - 1]))
+           	expr_array.push(v);
+        else if (v === '=' && expr_array.length > 1) {
+            expr_array = [this.result()];
         }
         this.setState(
             {

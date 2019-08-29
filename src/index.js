@@ -57,8 +57,13 @@ class Calc extends React.Component {
             else if (op) {
                 if (op === '+')
                     result += expr_array[i];
-                else if (op === '-')
-                    result -= expr_array[i];
+					else if (op === '-')
+					result -= expr_array[i];
+					else if (op === '*')
+					result *= expr_array[i];
+					else if (op === '/')
+					result /= expr_array[i];
+
             } else {
                 result += expr_array[i];
             }
@@ -82,8 +87,9 @@ class Calc extends React.Component {
                 <div className="result">{this.result()}</div>
                 <div className="board-row">
                     {this.renderSquare('+')}
-                    {this.renderSquare('-')}
-                    {this.renderSquare('=')}
+					{this.renderSquare('-')}
+					{this.renderSquare('*')}
+					{this.renderSquare('/')}
                 </div>
                 <div className="board-row">
                     {this.renderSquare(1)}
@@ -103,7 +109,7 @@ class Calc extends React.Component {
                 <div className="board-row">
                     {this.renderSquare('C')}
                     {this.renderSquare(0)}
-                    {this.renderSquare()}
+                    {this.renderSquare('=')}
                 </div>
             </div>);
     }
